@@ -60,26 +60,32 @@ export const assets = {
 export const specialityData = [
   {
     speciality: "koufu",
+    erea: "甲府市・甲斐市・中央市エリア",
     image: General_physician,
   },
   {
     speciality: "minami",
+    erea: "南アルプス市エリア",
     image: Gynecologist,
   },
   {
     speciality: "fujiyoshida",
+    erea: "富士吉田市エリア",
     image: Dermatologist,
   },
   {
     speciality: "hokuto",
+    erea: "北杜市エリア",   
     image: Pediatricians,
   },
   {
     speciality: "suwa",
+    erea: "諏訪市エリア",   
     image: Neurologist,
   },
   {
     speciality: "nansin",
+    erea: "南信エリア",
     image: Gastroenterologist,
   },
 ];
