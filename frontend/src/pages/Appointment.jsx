@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import { assets } from "../assets/assets";
+import RelateDoctors from "../components/RelateDoctors";
 
 function Appointment() {
   const { docId } = useParams();
@@ -143,23 +144,24 @@ function Appointment() {
               ))}
           </div>
 
-          
-            <div className="flex gap-3 items-center w-full overflow-x-scroll mt-4">
-              {docSlots.length &&
-                docSlots[slotIndex].map((item, index) => (
-                  <p
-                    onClick={() => setSlotTime(item.time)}
-                    className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer  ${slotTime === item.time ? "bg-primary text-white" : "border border-gray-200"}`}
-                    key={index}
-                  >
-                    {item.time.toLowerCase()}
-                  </p>
-                ))}
-            </div>
-          <button className="bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6">予約する</button>
+          <div className="flex gap-3 items-center w-full overflow-x-scroll mt-4">
+            {docSlots.length &&
+              docSlots[slotIndex].map((item, index) => (
+                <p
+                  onClick={() => setSlotTime(item.time)}
+                  className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer  ${slotTime === item.time ? "bg-primary text-white" : "border border-gray-200"}`}
+                  key={index}
+                >
+                  {item.time.toLowerCase()}
+                </p>
+              ))}
+          </div>
+          <button className="bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6">
+            予約する
+          </button>
         </div>
         {/* Related Doctors Section */}
-        <RelateDoctors docId={docId}  speciality={docInfo.speciality}/>
+        <RelateDoctors docId={docId} speciality={docInfo.speciality} />
       </div>
     )
   );
